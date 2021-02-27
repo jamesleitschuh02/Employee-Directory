@@ -1,8 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import Search from "./pages/Search/index";
 
 function App() {
-  return "welcome";
+  return (
+    <div className="App">
+    <Search />
+  </div>
+  )
 }
 
 export default App;
