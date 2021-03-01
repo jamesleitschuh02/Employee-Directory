@@ -4,7 +4,7 @@ import API from "../../utils/API";
 import SearchForm from "../../components/SearchForm/index";
 
 function Search(){
-    const [search, setSearch] = useState(20);
+    const [search, setSearch] = useState(0);
     const [results, setResults] = useState([]);
 
     const handleInputChange = event => {
