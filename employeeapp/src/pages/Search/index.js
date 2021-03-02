@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
-import SearchForm from "../../components/SearchForm/index";
+import SearchForm from "../../components/SearchForm";
+import Table from "../../components/Table";
 
 function Search(){
     const [search, setSearch] = useState(0);
@@ -35,8 +36,14 @@ function Search(){
             </div>
             <div>
                 {results.map((index) => {
-                    return (<p key={index.email}>{index.name.first}</p>);
-                    // return (<Table key={index.email} name={index.name.first} />)
+                    return (
+                    <Table 
+                        key={index.email} 
+                        name={index.name.first} 
+                        age={index.dob.age} 
+                        country={index.location.country} 
+                        gender={index.gender} 
+                    />)
                 })}
             </div>
         </>
