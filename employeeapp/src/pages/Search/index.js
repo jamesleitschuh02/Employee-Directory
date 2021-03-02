@@ -10,6 +10,7 @@ import Filter from "../../components/Filter";
 function Search(){
     const [search, setSearch] = useState(0);
     const [results, setResults] = useState([]);
+    const [age, setAge] = useState(0);
 
     const handleInputChange = event => {
         setSearch(event.target.value);
@@ -23,10 +24,26 @@ function Search(){
             setResults(res.data.results);
         })
     };
+
+    const sortAge = event => {
+        event.preventDefault();
+        if (age === 0) {
+            setAge(1);
+            setResults(results.sort((a,b) => {
+                return (a.dob.age > b.dob.age) ? 1 : -1
+            }));
+        } else {
+            setAge(0);
+            setResults(results.sort((a,b) => {
+                return (a.dob.age < b.dob.age) ? 1 : -1
+            }));
+        }
+    };
     
     useEffect(() => {
         console.log("Our new list is ", results);
-    },[results]);
+        console.log("Our AGE value is ", age);
+    },[results, age]);
 
     return (
         <>       
@@ -36,11 +53,16 @@ function Search(){
                     handleFormSubmit={handleFormSubmit}
                     handleInputChange={handleInputChange}
                 />
-                <Switch condition="Alphabetical" />
+                <Switch 
+                    condition="Sort by Age"
+                    switchFunction={sortAge} 
+                />
                 <Filter />
             </div>
             <div className="employeeTable">
-                <Table employeeList={results} />
+                <Table 
+                    employeeList={results} 
+                />
             </div>
         </>
     );

@@ -11,6 +11,7 @@ function Table(props){
                     {props.employeeList.map((index) => {
                         return (
                             <Rows 
+                            key={index.email}
                             name={index.name.first}
                             age={index.dob.age}
                             gender={index.gender}
