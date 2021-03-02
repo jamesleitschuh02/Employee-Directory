@@ -1,5 +1,13 @@
 .employeeTable{
     width: 50%;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin:auto;
+}
+
+.searchForum{
+    width: 50%;
+    text-align: center;
+    margin:auto;
+    margin-bottom: 15px;
 }

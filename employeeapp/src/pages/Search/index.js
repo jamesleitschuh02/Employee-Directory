@@ -65,7 +65,7 @@ function Search(){
 
     return (
         <>       
-            <div>
+            <div className="searchForum">
                 <SearchForm
                     results={search}
                     handleFormSubmit={handleFormSubmit}
