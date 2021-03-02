@@ -22,7 +22,6 @@ function Search(){
         event.preventDefault();
         API.employeeSearch(search)
         .then(res => {
-            // console.log(res.data.results);
             setAllEmployees(res.data.results);
             setResults(res.data.results);
         })
@@ -48,14 +47,7 @@ function Search(){
         setGender(event.target.value);
     };
 
-    // useEffect(() => {
-    //     console.log("Our new list is ", results);
-    //     console.log("Our AGE value is ", age);
-    // },[results, age]);
-
     useEffect(() => {
-        // console.log("Our gender value is ", gender);
-
         switch(gender) {
             default:
                 break;
@@ -69,7 +61,7 @@ function Search(){
                 setResults(allEmployees);
                 break;
         }
-    },[gender]);
+    },[allEmployees,gender]);
 
     return (
         <>       
