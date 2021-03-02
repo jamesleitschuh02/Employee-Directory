@@ -10,6 +10,7 @@ import Filter from "../../components/Filter";
 function Search(){
     const [search, setSearch] = useState(0);
     const [results, setResults] = useState([]);
+    const [allEmployees, setAllEmployees] = useState([]);
     const [age, setAge] = useState(0);
     const [gender, setGender] = useState(3);
 
@@ -21,7 +22,8 @@ function Search(){
         event.preventDefault();
         API.employeeSearch(search)
         .then(res => {
-            console.log(res.data.results);
+            // console.log(res.data.results);
+            setAllEmployees(res.data.results);
             setResults(res.data.results);
         })
     };
@@ -46,13 +48,27 @@ function Search(){
         setGender(event.target.value);
     };
 
-    useEffect(() => {
-        console.log("Our new list is ", results);
-        console.log("Our AGE value is ", age);
-    },[results, age]);
+    // useEffect(() => {
+    //     console.log("Our new list is ", results);
+    //     console.log("Our AGE value is ", age);
+    // },[results, age]);
 
     useEffect(() => {
-        console.log(gender);
+        // console.log("Our gender value is ", gender);
+
+        switch(gender) {
+            default:
+                break;
+            case "1":
+                setResults(allEmployees.filter(a => a.gender === "male"));
+                break;
+            case "2":
+                setResults(allEmployees.filter(a => a.gender === "female"));
+                break;
+            case "3":
+                setResults(allEmployees);
+                break;
+        }
     },[gender]);
 
     return (
