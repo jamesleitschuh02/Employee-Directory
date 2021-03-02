@@ -35,6 +35,9 @@ function Search(){
                 />
             </div>
             <div>
+                <Table info={results} />
+            </div>
+            {/* <div>
                 {results.map((index) => {
                     return (
                     <Table 
@@ -45,7 +48,7 @@ function Search(){
                         gender={index.gender} 
                     />)
                 })}
-            </div>
+            </div> */}
         </>
     );
 }

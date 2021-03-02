@@ -1,8 +1,18 @@
 import React from "react";
+import Columns from "../Columns";
 
 function Table(props){
     return(
-        (<p>|| Name: {props.name} || Age: {props.age} || Country: {props.country} || Gender: {props.gender} ||</p>)
+        <>
+            <table className="table">
+                <Columns />
+                {props.info.map((index) => {
+                    return (
+                        <p>{index.name.first}</p>
+                        );
+                    })}
+            </table>
+        </>
     );
 }
 
