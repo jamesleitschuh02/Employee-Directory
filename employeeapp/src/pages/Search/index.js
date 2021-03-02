@@ -11,6 +11,7 @@ function Search(){
     const [search, setSearch] = useState(0);
     const [results, setResults] = useState([]);
     const [age, setAge] = useState(0);
+    const [gender, setGender] = useState(3);
 
     const handleInputChange = event => {
         setSearch(event.target.value);
@@ -39,11 +40,20 @@ function Search(){
             }));
         }
     };
-    
+
+    const genderFunction = event => {
+        event.preventDefault();
+        setGender(event.target.value);
+    };
+
     useEffect(() => {
         console.log("Our new list is ", results);
         console.log("Our AGE value is ", age);
     },[results, age]);
+
+    useEffect(() => {
+        console.log(gender);
+    },[gender]);
 
     return (
         <>       
@@ -57,7 +67,9 @@ function Search(){
                     condition="Sort by Age"
                     switchFunction={sortAge} 
                 />
-                <Filter />
+                <Filter 
+                    filterFunction = {genderFunction}
+                />
             </div>
             <div className="employeeTable">
                 <Table 
