@@ -35,20 +35,8 @@ function Search(){
                 />
             </div>
             <div>
-                <Table info={results} />
+                <Table employeeList={results} />
             </div>
-            {/* <div>
-                {results.map((index) => {
-                    return (
-                    <Table 
-                        key={index.email} 
-                        name={index.name.first} 
-                        age={index.dob.age} 
-                        country={index.location.country} 
-                        gender={index.gender} 
-                    />)
-                })}
-            </div> */}
         </>
     );
 }
