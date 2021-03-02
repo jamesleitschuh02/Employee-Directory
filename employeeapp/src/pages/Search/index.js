@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import SearchForm from "../../components/SearchForm";
 import Table from "../../components/Table";
 import Switch from "../../components/Switch";
+import Filter from "../../components/Filter";
 
 function Search(){
     const [search, setSearch] = useState(0);
@@ -35,6 +36,7 @@ function Search(){
                     handleInputChange={handleInputChange}
                 />
                 <Switch condition="Alphabetical" />
+                <Filter />
             </div>
             <div>
                 <Table employeeList={results} />
