@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import SearchForm from "../../components/SearchForm";
 import Table from "../../components/Table";
+import Switch from "../../components/Switch";
 
 function Search(){
     const [search, setSearch] = useState(0);
@@ -33,6 +34,7 @@ function Search(){
                     handleFormSubmit={handleFormSubmit}
                     handleInputChange={handleInputChange}
                 />
+                <Switch condition="Alphabetical" />
             </div>
             <div>
                 <Table employeeList={results} />

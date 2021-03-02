@@ -5,7 +5,7 @@ import Rows from "../Rows";
 function Table(props){
     return(
         <>
-            <table className="table">
+            <table className="table table-striped">
                 <Columns />
                 <tbody>
                     {props.employeeList.map((index) => {
