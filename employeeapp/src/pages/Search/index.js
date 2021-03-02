@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
+import "./index.css";
 import SearchForm from "../../components/SearchForm";
 import Table from "../../components/Table";
 import Switch from "../../components/Switch";
@@ -28,7 +29,7 @@ function Search(){
     },[results]);
 
     return (
-        <>
+        <>       
             <div>
                 <SearchForm
                     results={search}
@@ -38,7 +39,7 @@ function Search(){
                 <Switch condition="Alphabetical" />
                 <Filter />
             </div>
-            <div>
+            <div className="employeeTable">
                 <Table employeeList={results} />
             </div>
         </>

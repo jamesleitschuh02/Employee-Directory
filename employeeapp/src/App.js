@@ -4,8 +4,8 @@ import Search from "./pages/Search/index";
 function App() {
   return (
     <div className="App">
-    <Search />
-  </div>
+      <Search />
+    </div>
   )
 }
 
