@@ -74,6 +74,7 @@ function Search(){
                 <Switch 
                     condition="Sort by Age"
                     switchFunction={sortAge} 
+                    switchToggle={age}
                 />
                 <Filter 
                     filterFunction = {genderFunction}

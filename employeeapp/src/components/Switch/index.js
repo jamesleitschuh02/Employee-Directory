@@ -2,15 +2,19 @@ import React from "react";
 
 function Switch(props) {
     return(
-        <div className="form-check form-switch">
+        <div className="form-check">
             <input 
                 className="form-check-input" 
-                type="checkbox" id="flexSwitchCheckDefault" 
+                type="checkbox" 
+                value=""
+                id="flexCheckDefault" 
                 onClick={props.switchFunction} 
+                unchecked
             />
             <label 
                 className="form-check-label" 
-                htmlFor="flexSwitchCheckDefault">{props.condition}
+                for="flexCheckDefault">
+                    {props.condition}
             </label>
         </div>
     );
